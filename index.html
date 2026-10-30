@@ -3,118 +3,504 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SULUH 3T - Smart Educational Ecosystem</title>
+    <title>SULUH - Ekosistem Pendidikan Adaptif</title>
+    <!-- Tailwind CSS & FontAwesome Icons -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #0f172a; }
-        .card-bright { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
-        .tab-btn { padding: 0.6rem 1.2rem; border-radius: 0.75rem; font-size: 0.85rem; font-weight: 600; color: #64748b; }
-        .active-tab { background-color: #2563eb !important; color: #ffffff !important; }
-        .btn-action { background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; font-weight: 700; padding: 0.75rem 1.5rem; border-radius: 0.75rem; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f0f7ff; color: #0f172a; }
+        .card-school {
+            background-color: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 1.25rem;
+            padding: 1.25rem;
+            box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.08);
+            transition: all 0.2s ease;
+        }
+        .card-school:hover {
+            border-color: #93c5fd;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -4px rgba(37, 99, 235, 0.12);
+        }
+        .tab-btn {
+            padding: 0.65rem 1.25rem;
+            border-radius: 0.85rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #475569;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        .tab-btn:hover { color: #2563eb; background-color: #dbeafe; }
+        .active-tab {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+            color: #ffffff !important;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+        }
+        .btn-action {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white; font-weight: 800; padding: 0.85rem 1.5rem;
+            border-radius: 0.85rem; transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+        }
+        .btn-action:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35); }
+        .option-btn {
+            width: 100%; text-align: left; padding: 0.85rem 1rem;
+            background-color: #f8fafc; border: 2px solid #cbd5e1;
+            border-radius: 0.85rem; font-weight: 700; color: #334155; transition: all 0.15s ease;
+        }
+        .option-btn:hover { border-color: #2563eb; background-color: #eff6ff; color: #1e40af; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col relative">
 
-    <!-- MODAL LOGIN TERKUNCI (POP-UP AWAL) -->
-    <div id="login-modal" class="fixed inset-0 z-[100] bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200">
-            <div class="text-center mb-6">
-                <div class="w-12 h-12 mx-auto rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center font-bold text-white text-2xl shadow-md mb-2">
-                    <i class="fa-solid fa-lock"></i>
+    <!-- MODAL POP-UP AWAL: PENJELASAN SULUH & GERBANG LOGIN -->
+    <div id="login-modal" class="fixed inset-0 z-[100] bg-slate-900/70 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border-4 border-blue-200 animate-fade-in max-h-[90vh] overflow-y-auto">
+            
+            <!-- Logo & Title Pop-up -->
+            <div class="text-center mb-5">
+                <div class="flex justify-center items-center space-x-3 mb-3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Logo_Tut_Wuri_Handayani.png" 
+                         alt="Logo Mendikbud" class="h-12 w-auto object-contain">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-400 via-orange-500 to-red-500 flex items-center justify-center font-black text-white text-2xl shadow-lg">
+                        <i class="fa-solid fa-fire-flame-curved"></i>
+                    </div>
                 </div>
-                <h2 class="text-xl font-extrabold text-slate-800">Akses Terbatas SULUH 3T</h2>
-                <p class="text-xs text-slate-500 mt-1">Sistem terkunci. Silakan login sebagai Anak Magang atau Koordinator untuk mengakses fitur.</p>
+                <h2 class="text-2xl font-black text-slate-800 tracking-tight">SULUH</h2>
+                <p class="text-xs font-bold text-blue-600 uppercase tracking-wider">Penerang Pendidikan Indonesia di Daerah 3T</p>
             </div>
 
+            <!-- Penjelasan Singkat Apa Itu SULUH -->
+            <div class="bg-blue-50/80 border-2 border-blue-200 rounded-2xl p-4 text-xs leading-relaxed text-slate-700 mb-6 space-y-2">
+                <p class="font-extrabold text-blue-900 text-sm flex items-center">
+                    <i class="fa-solid fa-lightbulb text-amber-500 mr-2 text-base"></i> Apa itu Program SULUH?
+                </p>
+                <p>
+                    <strong>SULUH</strong> (secara harfiah berarti <em>obor atau penerang</em>) adalah ekosistem penugasan pemuda (<strong>Suluh Muda</strong>) berbasis kebutuhan sekolah dan <em>Data Loop Society 5.0</em> untuk mewujudkan pendidikan berkelanjutan di wilayah 3T (Tertinggal, Terdepan, Terluar).
+                </p>
+                <p>
+                    Aplikasi ini mengintegrasikan pemetaan penempatan presisi (<strong>SULUH MATCH</strong>), media pembelajaran bertingkat offline (<strong>SULUH LEARN</strong>), serta evaluasi dampak dan serah terima mandiri ke guru (<strong>SULUH IMPACT</strong>).
+                </p>
+            </div>
+
+            <!-- Form Otentikasi Login -->
             <form id="form-login" onsubmit="handleLogin(event)" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">Peran Akses</label>
-                    <select id="login-role" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700">
-                        <option value="magang">Anak Magang / Pemuda Penugasan</option>
-                        <option value="koordinator">Koordinator Program (Fazila)</option>
+                    <label class="block text-xs font-extrabold text-slate-700 mb-1">Peran Akses Masuk</label>
+                    <select id="login-role" class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-3.5 py-2.5 text-xs font-bold text-slate-700 focus:border-blue-500 focus:outline-none">
+                        <option value="suluh_muda">Suluh Muda (Peserta Penugasan)</option>
+                        <option value="pendamping">Pendamping Suluh (Fazila)</option>
                     </select>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">ID Pengguna / Email</label>
-                    <input type="text" id="login-id" placeholder="Masukkan ID Magang / Email Koordinator" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700 focus:outline-none focus:border-blue-500" required>
+                    <label class="block text-xs font-extrabold text-slate-700 mb-1">ID Pengguna / Email</label>
+                    <input type="text" id="login-id" placeholder="Masukkan ID Suluh Muda atau Email Pendamping" class="w-full bg-white border-2 border-slate-200 rounded-xl px-3.5 py-2.5 text-xs font-bold text-slate-700 focus:border-blue-500 focus:outline-none" required>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">Kata Sandi / PIN Akses</label>
-                    <input type="password" id="login-pass" placeholder="••••••••" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700 focus:outline-none focus:border-blue-500" required>
+                    <label class="block text-xs font-extrabold text-slate-700 mb-1">PIN / Kata Sandi</label>
+                    <input type="password" id="login-pass" value="123456" class="w-full bg-white border-2 border-slate-200 rounded-xl px-3.5 py-2.5 text-xs font-bold text-slate-700 focus:border-blue-500 focus:outline-none" required>
                 </div>
-                <button type="submit" class="btn-action w-full text-xs py-3">
-                    <i class="fa-solid fa-right-to-bracket mr-2"></i> Masuk ke Sistem Portal
+                <button type="submit" class="btn-action w-full text-xs py-3.5 mt-2 flex items-center justify-center">
+                    <i class="fa-solid fa-right-to-bracket mr-2 text-sm"></i> Masuk ke Dashboard SULUH
                 </button>
             </form>
-            <p id="login-error" class="text-[11px] text-rose-600 font-bold text-center mt-3 hidden">ID atau Kata Sandi Salah! Silakan coba lagi.</p>
         </div>
     </div>
 
-    <!-- HEADER UTAMA APLIKASI -->
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 px-6 py-3 flex justify-between items-center shadow-sm">
+    <!-- Header Utama Aplikasi -->
+    <header class="bg-white border-b-2 border-blue-100 sticky top-0 z-50 px-6 py-3 flex justify-between items-center shadow-sm">
         <div class="flex items-center space-x-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Logo_Tut_Wuri_Handayani.png" alt="Kemendikdasmen" class="h-10 w-auto">
-            <div class="flex items-center space-x-2">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 to-red-500 flex items-center justify-center font-bold text-white text-lg">
+            <!-- Logo Resmi Mendikbud -->
+            <div class="flex items-center space-x-3 border-r-2 border-slate-200 pr-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Logo_Tut_Wuri_Handayani.png" 
+                     alt="Logo Mendikbud" class="h-11 w-auto object-contain">
+                <div class="hidden sm:block">
+                    <p class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider">Kementerian Pendidikan</p>
+                    <p class="text-xs font-black text-slate-800">Dasar dan Menengah</p>
+                </div>
+            </div>
+
+            <!-- Logo & Title SULUH -->
+            <div class="flex items-center space-x-2.5">
+                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-amber-400 via-orange-500 to-red-500 flex items-center justify-center font-black text-white text-xl shadow-md">
                     <i class="fa-solid fa-fire-flame-curved"></i>
                 </div>
                 <div>
-                    <h1 class="text-base font-extrabold text-slate-900">SULUH 3T</h1>
-                    <p class="text-[10px] font-bold text-blue-600">Society 5.0 Data Loop</p>
+                    <h1 class="text-xl font-black text-slate-900 tracking-tight">SULUH</h1>
+                    <p class="text-[10px] font-extrabold text-blue-600 uppercase">Ekosistem Pendidikan 3T</p>
                 </div>
             </div>
         </div>
 
-        <!-- STATUS AKUN AKTIF -->
+        <!-- Profil Akun Aktif & Status Logout -->
         <div class="flex items-center space-x-3">
-            <div id="user-badge" class="hidden items-center space-x-2 bg-blue-50 border border-blue-200 px-3 py-1.5 rounded-xl">
-                <i class="fa-solid fa-user-check text-blue-600 text-xs"></i>
+            <div id="user-badge" class="flex items-center space-x-2 bg-blue-50 border-2 border-blue-200 px-3.5 py-1.5 rounded-2xl">
+                <div class="w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center text-white font-black text-xs shadow-sm">
+                    <i class="fa-solid fa-user-check"></i>
+                </div>
                 <div>
-                    <p class="text-[9px] text-blue-600 font-bold uppercase" id="user-role-label">Role</p>
-                    <p class="text-xs font-extrabold text-blue-900" id="user-name-label">User Name</p>
+                    <p class="text-[9px] text-blue-600 font-extrabold uppercase" id="user-role-label">Pendamping Suluh</p>
+                    <p class="text-xs font-black text-blue-950" id="user-name-label">Fazila</p>
                 </div>
             </div>
-            <button onclick="logout()" id="btn-logout" class="hidden text-xs text-rose-600 font-bold hover:bg-rose-50 px-2.5 py-1.5 rounded-lg border border-rose-200">
+            <button onclick="logout()" id="btn-logout" class="text-xs text-rose-600 font-extrabold hover:bg-rose-50 px-3 py-2 rounded-xl border-2 border-rose-200 transition-all">
                 <i class="fa-solid fa-power-off mr-1"></i> Keluar
             </button>
         </div>
     </header>
 
-    <!-- CONTENT BODY (Hanya terbuka setelah login) -->
-    <main class="p-6 max-w-7xl mx-auto flex-grow w-full">
-        <div class="card-bright text-center py-12">
-            <h2 class="text-lg font-extrabold text-slate-800">Selamat Datang di Portal SULUH 3T</h2>
-            <p class="text-xs text-slate-500 mt-2">Login berhasil! Anda sekarang dapat mengelola data Pre-Test, SULUH MATCH, dan Game Pembelajaran.</p>
+    <!-- Navigation Tabs -->
+    <nav class="bg-white border-b-2 border-slate-100 px-6 py-2.5">
+        <div class="flex space-x-2 overflow-x-auto">
+            <button onclick="switchTab('overview')" id="btn-overview" class="tab-btn active-tab">
+                <i class="fa-solid fa-chart-pie mr-1.5"></i> Ringkasan & Data Loop
+            </button>
+            <button onclick="switchTab('match')" id="btn-match" class="tab-btn">
+                <i class="fa-solid fa-people-arrows mr-1.5"></i> SULUH MATCH & Penugasan
+            </button>
+            <button onclick="switchTab('assessment')" id="btn-assessment" class="tab-btn">
+                <i class="fa-solid fa-clipboard-check mr-1.5"></i> Pre-Test & Asesmen Psikologi
+            </button>
+            <button onclick="switchTab('game')" id="btn-game" class="tab-btn">
+                <i class="fa-solid fa-gamepad mr-1.5"></i> SULUH Games (Belajar)
+            </button>
         </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="p-6 max-w-7xl mx-auto flex-grow w-full">
+        
+        <!-- Tab 1: Ringkasan & Loop Data -->
+        <section id="tab-overview" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="card-school border-l-8 border-l-rose-500">
+                    <p class="text-xs font-bold text-slate-400">Kekurangan Guru (Kab. Sanggau)</p>
+                    <h3 class="text-2xl font-black text-rose-600 mt-1">1.093 Guru</h3>
+                    <p class="text-[11px] font-semibold text-slate-500 mt-1">Kebutuhan: 5.803 | Ada: 4.710</p>
+                </div>
+                <div class="card-school border-l-8 border-l-amber-500">
+                    <p class="text-xs font-bold text-slate-400">Skor Numerasi Daerah</p>
+                    <h3 class="text-2xl font-black text-amber-600 mt-1">62.22 / 100</h3>
+                    <p class="text-[11px] font-semibold text-slate-500 mt-1">Rata-Rata Nasional: 67.94</p>
+                </div>
+                <div class="card-school border-l-8 border-l-blue-500">
+                    <p class="text-xs font-bold text-slate-400">Pendamping Suluh</p>
+                    <h3 class="text-2xl font-black text-blue-600 mt-1">Fazila</h3>
+                    <p class="text-[11px] font-semibold text-slate-500 mt-1">Supervisi & QA Program</p>
+                </div>
+                <div class="card-school border-l-8 border-l-emerald-500">
+                    <p class="text-xs font-bold text-slate-400">Masa Penugasan Suluh Muda</p>
+                    <h3 class="text-2xl font-black text-emerald-600 mt-1">6 Bulan</h3>
+                    <p class="text-[11px] font-semibold text-slate-500 mt-1">+ Pasca Penugasan (+1M & +3M)</p>
+                </div>
+            </div>
+
+            <!-- Loop Data Diagram Card -->
+            <div class="card-school bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 border-blue-200">
+                <h2 class="text-base font-black text-slate-800 mb-2 flex items-center">
+                    <i class="fa-solid fa-rotate text-blue-600 mr-2.5 text-lg"></i> Siklus Data Loop Society 5.0 (Program SULUH)
+                </h2>
+                <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                    Integrasi antara ruang fisik sekolah 3T dan pemrosesan data di ruang siber. Hasil evaluasi penugasan menjadi umpan balik otomatis untuk memperbaiki kriteria matching di penempatan berikutnya.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                    <div class="bg-white p-4 rounded-2xl border-2 border-blue-200 shadow-sm">
+                        <div class="w-10 h-10 mx-auto rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-black mb-2 text-sm">1</div>
+                        <h4 class="font-extrabold text-xs text-slate-800">SULUH MATCH</h4>
+                        <p class="text-[11px] font-medium text-slate-500 mt-1">Pencocokan kompetensi Suluh Muda dengan profil kebutuhan sekolah 3T.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-2xl border-2 border-purple-200 shadow-sm">
+                        <div class="w-10 h-10 mx-auto rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-black mb-2 text-sm">2</div>
+                        <h4 class="font-extrabold text-xs text-slate-800">SULUH LEARN</h4>
+                        <p class="text-[11px] font-medium text-slate-500 mt-1">Pembelajaran bertingkat (TaRL) yang berjalan offline via SULUH Box.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 shadow-sm">
+                        <div class="w-10 h-10 mx-auto rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-black mb-2 text-sm">3</div>
+                        <h4 class="font-extrabold text-xs text-slate-800">SULUH IMPACT</h4>
+                        <p class="text-[11px] font-medium text-slate-500 mt-1">Evaluasi keberlanjutan, kemandirian guru, & umpan balik siklus penugasan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 2: SULUH MATCH & Penugasan -->
+        <section id="tab-match" class="space-y-6 hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card-school">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-base font-black text-slate-800">Pencocokan Tim Suluh Muda</h2>
+                        <span class="text-[10px] font-black bg-amber-100 text-amber-800 px-2.5 py-1 rounded-lg border border-amber-300">
+                            Pendamping: Fazila
+                        </span>
+                    </div>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-extrabold text-slate-600 mb-1">Sekolah Penugasan Target</label>
+                            <input type="text" value="SDN 04 Sekayam (Kab. Sanggau, Kalbar)" class="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-3.5 py-2 text-xs font-bold text-slate-700" readonly>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-extrabold text-slate-600 mb-1">Fokus Kebutuhan Utama Sekolah</label>
+                            <select id="match-need" class="w-full bg-white border-2 border-slate-200 rounded-xl px-3.5 py-2 text-xs font-bold text-slate-700">
+                                <option value="calistung">Pendampingan Numerasi & Calistung Dasar</option>
+                                <option value="psikologi">Dukungan Psikologi & Kesiapan Belajar</option>
+                                <option value="tik">Pengelolaan SULUH Box & Media Offline</option>
+                            </select>
+                        </div>
+                        <button type="button" onclick="runMatch()" class="btn-action w-full text-xs">
+                            <i class="fa-solid fa-wand-magic-sparkles mr-2"></i> Rekomendasikan Tim Suluh Muda
+                        </button>
+                    </form>
+                </div>
+
+                <div class="card-school">
+                    <h2 class="text-base font-black text-slate-800 mb-4">Rekomendasi Kandidat Suluh Muda</h2>
+                    <div id="match-output" class="space-y-3">
+                        <p class="text-xs text-slate-400 italic">Klik tombol pencocokan di sebelah kiri untuk melihat rekomendasi tim.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 3: Pre-Test & Asesmen Psikologi -->
+        <section id="tab-assessment" class="space-y-6 hidden">
+            <div class="card-school bg-amber-50/60 border-amber-200">
+                <div class="flex items-center space-x-3 mb-2">
+                    <i class="fa-solid fa-brain text-amber-600 text-xl"></i>
+                    <h2 class="text-base font-black text-slate-800">Modul Asesmen Diagnostik & Psikologi Belajar</h2>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Digunakan oleh <strong>Suluh Muda</strong> untuk memetakan titik mulai belajar siswa (Teaching at the Right Level) serta mengukur potensi penalaran logika non-verbal siswa secara objektif.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Pre-Test Akademik -->
+                <div class="card-school">
+                    <h3 class="text-sm font-extrabold text-slate-800 mb-3 flex items-center">
+                        <i class="fa-solid fa-pen-to-square text-blue-600 mr-2"></i> Pre-Test Akademik Dasar (TaRL)
+                    </h3>
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                            <p class="font-bold text-slate-700">Soal 1: Berapakah hasil dari 15 + 18?</p>
+                            <div class="grid grid-cols-2 gap-2 mt-2">
+                                <button class="p-2 bg-white border border-slate-200 rounded-lg hover:border-blue-500 font-semibold text-slate-600">A. 31</button>
+                                <button class="p-2 bg-white border border-slate-200 rounded-lg hover:border-blue-500 font-semibold text-slate-600">B. 33</button>
+                            </div>
+                        </div>
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                            <p class="font-bold text-slate-700">Soal 2: Kata "SEKOLAH" terdiri dari berapa huruf?</p>
+                            <div class="grid grid-cols-2 gap-2 mt-2">
+                                <button class="p-2 bg-white border border-slate-200 rounded-lg hover:border-blue-500 font-semibold text-slate-600">A. 6 Huruf</button>
+                                <button class="p-2 bg-white border border-slate-200 rounded-lg hover:border-blue-500 font-semibold text-slate-600">B. 7 Huruf</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tes Potensi Belajar Non-Verbal -->
+                <div class="card-school">
+                    <h3 class="text-sm font-extrabold text-slate-800 mb-3 flex items-center">
+                        <i class="fa-solid fa-shapes text-purple-600 mr-2"></i> Tes Potensi Belajar Non-Verbal
+                    </h3>
+                    <p class="text-xs text-slate-500 mb-3">Mengukur daya penalaran logika visual siswa tanpa terhalang kemampuan baca.</p>
+                    <div class="p-4 bg-purple-50 rounded-2xl border-2 border-purple-200 text-center">
+                        <p class="text-xs font-extrabold text-purple-900 mb-2">Lanjutkan Pola Gambar Berikut:</p>
+                        <div class="text-2xl mb-3">🔴 🔵 🔴 🔵 [ ? ]</div>
+                        <div class="flex justify-center space-x-3">
+                            <button class="px-4 py-2 bg-white border-2 border-purple-300 rounded-xl font-bold text-purple-700 hover:bg-purple-100">🔴 Merah</button>
+                            <button class="px-4 py-2 bg-white border-2 border-purple-300 rounded-xl font-bold text-purple-700 hover:bg-purple-100">🔵 Biru</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 4: SULUH Games (Belajar Interaktif) -->
+        <section id="tab-game" class="space-y-6 hidden">
+            <!-- Header Game & Skor -->
+            <div class="card-school bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white flex justify-between items-center border-none">
+                <div>
+                    <h2 class="text-lg font-black tracking-wide">🎮 SULUH Games Edukasi</h2>
+                    <p class="text-xs text-blue-100">Mainkan game sesuai level untuk menambah EXP dan Bintang!</p>
+                </div>
+                <div class="flex space-x-3">
+                    <div class="bg-white/20 backdrop-blur px-3 py-1.5 rounded-xl text-center border border-white/30">
+                        <p class="text-[9px] text-blue-100 font-bold">TOTAL EXP</p>
+                        <p id="player-exp" class="text-base font-black text-amber-300">120 EXP</p>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur px-3 py-1.5 rounded-xl text-center border border-white/30">
+                        <p class="text-[9px] text-blue-100 font-bold">BINTANG</p>
+                        <p id="player-stars" class="text-base font-black text-yellow-300">⭐ 6</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Level Selector Buttons -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <button onclick="loadGameLevel(1)" id="lvl-1" class="p-3 bg-white border-2 border-blue-500 rounded-xl font-extrabold text-xs text-blue-600 shadow-sm">
+                    Level 1: Huruf & Bunyi
+                </button>
+                <button onclick="loadGameLevel(2)" id="lvl-2" class="p-3 bg-white border-2 border-slate-200 rounded-xl font-extrabold text-xs text-slate-600 hover:border-blue-300">
+                    Level 2: Calistung Dasar
+                </button>
+                <button onclick="loadGameLevel(3)" id="lvl-3" class="p-3 bg-white border-2 border-slate-200 rounded-xl font-extrabold text-xs text-slate-600 hover:border-blue-300">
+                    Level 3: Logika & Sains
+                </button>
+                <button onclick="loadGameLevel(4)" id="lvl-4" class="p-3 bg-white border-2 border-slate-200 rounded-xl font-extrabold text-xs text-slate-600 hover:border-blue-300">
+                    Level 4: Persiapan TKA
+                </button>
+            </div>
+
+            <!-- Arena Kuis Game Interaktif -->
+            <div class="card-school max-w-2xl mx-auto border-2 border-blue-300">
+                <div class="flex justify-between items-center mb-4">
+                    <span id="game-level-title" class="text-xs font-black text-blue-600 bg-blue-100 px-3 py-1 rounded-full">
+                        Level 1: Mengenal Huruf
+                    </span>
+                    <span class="text-xs font-extrabold text-slate-400">Soal 1 dari 5</span>
+                </div>
+
+                <div class="text-center py-6">
+                    <h3 id="question-text" class="text-lg font-black text-slate-800 mb-6">
+                        Manakah kata yang diawali dengan huruf "B"?
+                    </h3>
+
+                    <div id="options-container" class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <button onclick="checkAnswer(true)" class="option-btn">A. BOLA ⚽</button>
+                        <button onclick="checkAnswer(false)" class="option-btn">B. APEL 🍎</button>
+                        <button onclick="checkAnswer(false)" class="option-btn">C. DAUN 🍃</button>
+                        <button onclick="checkAnswer(false)" class="option-btn">D. GAJAH 🐘</button>
+                    </div>
+                </div>
+
+                <div id="game-feedback" class="hidden p-3 rounded-xl text-center text-xs font-extrabold mt-4"></div>
+            </div>
+        </section>
+
     </main>
 
+    <!-- Footer -->
+    <footer class="bg-white border-t-2 border-slate-100 py-4 text-center text-xs text-slate-500 font-semibold">
+        <p><strong>SULUH 3T</strong> • Disupervisi oleh <strong>Fazila</strong> (Pendamping Suluh) • Bekerja sama dengan <strong>Kemendikdasmen RI</strong></p>
+    </footer>
+
+    <!-- JavaScript Logika Web -->
     <script>
+        let currentEXP = 120;
+        let currentStars = 6;
+
         function handleLogin(e) {
             e.preventDefault();
             const role = document.getElementById('login-role').value;
             const id = document.getElementById('login-id').value;
             
-            // Pengaturan Sederhana Simulasi Akun Valid
             document.getElementById('login-modal').classList.add('hidden');
-            document.getElementById('user-badge').classList.remove('hidden');
-            document.getElementById('user-badge').classList.add('flex');
-            document.getElementById('btn-logout').classList.remove('hidden');
-
-            if(role === 'koordinator') {
-                document.getElementById('user-role-label').innerText = "Koordinator Program";
+            
+            if(role === 'pendamping') {
+                document.getElementById('user-role-label').innerText = "Pendamping Suluh";
                 document.getElementById('user-name-label').innerText = "Fazila";
             } else {
-                document.getElementById('user-role-label').innerText = "Anak Magang / Pemuda";
-                document.getElementById('user-name-label').innerText = id || "Tim Magang Sanggau";
+                document.getElementById('user-role-label').innerText = "Suluh Muda";
+                document.getElementById('user-name-label').innerText = id || "Tim Suluh Sanggau";
             }
         }
 
         function logout() {
             document.getElementById('login-modal').classList.remove('hidden');
-            document.getElementById('user-badge').classList.add('hidden');
-            document.getElementById('btn-logout').classList.add('hidden');
+        }
+
+        function switchTab(tabId) {
+            const tabs = ['overview', 'match', 'assessment', 'game'];
+            tabs.forEach(t => {
+                document.getElementById(`tab-${t}`).classList.add('hidden');
+                document.getElementById(`btn-${t}`).classList.remove('active-tab');
+            });
+            document.getElementById(`tab-${tabId}`).classList.remove('hidden');
+            document.getElementById(`btn-${tabId}`).classList.add('active-tab');
+        }
+
+        function runMatch() {
+            const output = document.getElementById('match-output');
+            output.innerHTML = `
+                <div class="p-3.5 bg-blue-50/80 rounded-2xl border-2 border-blue-200 flex justify-between items-center">
+                    <div>
+                        <h4 class="font-extrabold text-xs text-blue-900">Budi Santoso (Pendidikan Matematika)</h4>
+                        <p class="text-[10px] font-semibold text-blue-700">Role: Ketum Tim & Tutor Numerasi</p>
+                    </div>
+                    <span class="text-[10px] font-extrabold bg-emerald-100 text-emerald-800 px-2 py-1 rounded-lg border border-emerald-300">Match: 98%</span>
+                </div>
+                <div class="p-3.5 bg-purple-50/80 rounded-2xl border-2 border-purple-200 flex justify-between items-center">
+                    <div>
+                        <h4 class="font-extrabold text-xs text-purple-900">Siti Rahma (Psikologi Pendidikan)</h4>
+                        <p class="text-[10px] font-semibold text-purple-700">Role: Asesmen Kesiapan Belajar</p>
+                    </div>
+                    <span class="text-[10px] font-extrabold bg-emerald-100 text-emerald-800 px-2 py-1 rounded-lg border border-emerald-300">Match: 95%</span>
+                </div>
+            `;
+        }
+
+        function loadGameLevel(lvl) {
+            const title = document.getElementById('game-level-title');
+            const question = document.getElementById('question-text');
+            const container = document.getElementById('options-container');
+
+            if(lvl === 1) {
+                title.innerText = "Level 1: Mengenal Huruf";
+                question.innerText = 'Manakah kata yang diawali dengan huruf "B"?';
+                container.innerHTML = `
+                    <button onclick="checkAnswer(true)" class="option-btn">A. BOLA ⚽</button>
+                    <button onclick="checkAnswer(false)" class="option-btn">B. APEL 🍎</button>
+                    <button onclick="checkAnswer(false)" class="option-btn">C. DAUN 🍃</button>
+                    <button onclick="checkAnswer(false)" class="option-btn">D. GAJAH 🐘</button>
+                `;
+            } else if(lvl === 2) {
+                title.innerText = "Level 2: Calistung Dasar";
+                question.innerText = 'Berapakah hasil dari 7 + 8?';
+                container.innerHTML = `
+                    <button onclick="checkAnswer(false)" class="option-btn">A. 13</button>
+                    <button onclick="checkAnswer(true)" class="option-btn">B. 15</button>
+                    <button onclick="checkAnswer(false)" class="option-btn">C. 16</button>
+                    <button onclick="checkAnswer(false)" class="option-btn">D. 14</button>
+                `;
+            } else if(lvl === 3) {
+                title.innerText = "Level 3: Logika & Sains";
+                question.innerText = 'Air mengalir dari tempat tinggi ke tempat yang...?';
+                container.innerHTML = `
+                    <button onclick="checkAnswer(true)" class="option-btn">A. Lebih Rendah</button>
+                    <button onclick="checkAnswer(false)" class="option-btn">B. Lebih Tinggi</button>
+                    <button onclick="checkAnswer(false)" class="option-btn">C. Panas</button>
+                    <button onclick="checkAnswer(false)" class="option-btn">D. Sejajar</button>
+                `;
+            } else if(lvl === 4) {
+                title.innerText = "Level 4: Persiapan TKA";
+                question.innerText = 'Sinonim dari kata "EFEKTIF" adalah...?';
+                container.innerHTML = `
+                    <button onclick="checkAnswer(true)" class="option-btn">A. Tepat Guna</button>
+                    <button onclick="checkAnswer(false)" class="option-btn">B. Hemat Biaya</button>
+                    <button onclick="checkAnswer(false)" class="option-btn">C. Lambat</button>
+                    <button onclick="checkAnswer(false)" class="option-btn">D. Rumit</button>
+                `;
+            }
+        }
+
+        function checkAnswer(isCorrect) {
+            const feedback = document.getElementById('game-feedback');
+            feedback.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'bg-rose-100', 'text-rose-800');
+
+            if(isCorrect) {
+                currentEXP += 20;
+                currentStars += 1;
+                document.getElementById('player-exp').innerText = `${currentEXP} EXP`;
+                document.getElementById('player-stars').innerText = `⭐ ${currentStars}`;
+                feedback.innerText = "🎉 Jawaban Benar! +20 EXP & +1 Bintang";
+                feedback.classList.add('bg-emerald-100', 'text-emerald-800');
+            } else {
+                feedback.innerText = "❌ Jawaban Belum Tepat. Coba Lagi Ya!";
+                feedback.classList.add('bg-rose-100', 'text-rose-800');
+            }
         }
     </script>
 </body>
