@@ -59,13 +59,8 @@
             <!-- Header Modal & Logo Tut Wuri Handayani -->
             <div class="text-center mb-6">
                 <div class="flex justify-center items-center space-x-4 mb-3">
-                    <svg class="h-16 w-16" viewBox="0 0 100 100">
-                        <polygon points="50,5 95,25 95,75 50,95 5,75 5,25" fill="#1d9bf0"/>
-                        <path d="M50,20 L65,50 L35,50 Z" fill="#ffffff"/>
-                        <circle cx="50" cy="38" r="7" fill="#fbbf24"/>
-                        <path d="M20,65 Q50,85 80,65 Q50,75 20,65" fill="#ffffff"/>
-                        <text x="50" y="20" font-size="8" font-weight="bold" fill="#ffffff" text-anchor="middle">TUT WURI HANDAYANI</text>
-                    </svg>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Logo_Tut_Wuri_Handayani.png" 
+                         alt="Logo Tut Wuri Handayani" class="h-16 w-auto object-contain">
                     <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-400 via-orange-500 to-red-500 flex items-center justify-center font-black text-white text-3xl shadow-lg">
                         <i class="fa-solid fa-fire-flame-curved"></i>
                     </div>
@@ -80,7 +75,7 @@
                     <i class="fa-solid fa-lightbulb text-amber-500 mr-2 text-xl"></i> Apa itu Program SULUH?
                 </p>
                 <p>
-                    <strong>SULUH</strong> adalah ekosistem penugasan pemuda (<strong>Suluh Muda</strong>) berbasis kebutuhan sekolah dan <em>Data Loop Society 5.0</em> untuk mendukung pemerataan pendidikan di wilayah 3T periode 2025–2029[cite: 1, 29].
+                    <strong>SULUH</strong> adalah ekosistem penugasan pemuda (<strong>Suluh Muda</strong>) berbasis kebutuhan sekolah dan <em>Data Loop Society 5.0</em> untuk mendukung pemerataan pendidikan di wilayah 3T periode 2025–2029.
                 </p>
             </div>
 
@@ -119,12 +114,8 @@
     <header class="bg-white border-b-4 border-blue-200 sticky top-0 z-50 px-6 py-3 flex justify-between items-center shadow-md">
         <div class="flex items-center space-x-4">
             <div class="flex items-center space-x-3 border-r-2 border-slate-200 pr-4">
-                <svg class="h-10 w-10" viewBox="0 0 100 100">
-                    <polygon points="50,5 95,25 95,75 50,95 5,75 5,25" fill="#1d9bf0"/>
-                    <path d="M50,20 L65,50 L35,50 Z" fill="#ffffff"/>
-                    <circle cx="50" cy="38" r="7" fill="#fbbf24"/>
-                    <path d="M20,65 Q50,85 80,65 Q50,75 20,65" fill="#ffffff"/>
-                </svg>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Logo_Tut_Wuri_Handayani.png" 
+                     alt="Logo Tut Wuri Handayani" class="h-11 w-auto object-contain">
                 <div class="hidden sm:block">
                     <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Kementerian Pendidikan</p>
                     <p class="text-sm font-black text-slate-800">Dasar dan Menengah</p>
@@ -162,7 +153,7 @@
     <nav class="bg-white border-b-2 border-slate-200 px-6 py-3">
         <div class="flex space-x-3 overflow-x-auto">
             <button onclick="switchTab('overview')" id="btn-overview" class="tab-btn active-tab">
-                <i class="fa-solid fa-chart-pie mr-2"></i> Ringkasan & Data Loop
+                <i class="fa-solid fa-chart-pie mr-2"></i> Ringkasan & Dashboard
             </button>
             <button onclick="switchTab('schools')" id="btn-schools" class="tab-btn">
                 <i class="fa-solid fa-school mr-2"></i> Peta 3T (2025-2029) & Data Murid
@@ -173,8 +164,11 @@
             <button onclick="switchTab('game')" id="btn-game" class="tab-btn">
                 <i class="fa-solid fa-shapes mr-2"></i> Materi & Game Belajar (TK-SMA)
             </button>
+            <button onclick="switchTab('tka')" id="btn-tka" class="tab-btn">
+                <i class="fa-solid fa-graduation-cap mr-2"></i> Latihan Soal & Modul TKA
+            </button>
             <button onclick="switchTab('video')" id="btn-video" class="tab-btn">
-                <i class="fa-solid fa-video mr-2"></i> Video Belajar Offline (BIG Course)
+                <i class="fa-solid fa-video mr-2"></i> Video Belajar Offline
             </button>
         </div>
     </nav>
@@ -182,28 +176,28 @@
     <!-- Main Content Area -->
     <main class="p-6 max-w-7xl mx-auto flex-grow w-full">
         
-        <!-- Tab 1: Ringkasan & Data Loop -->
+        <!-- Tab 1: Ringkasan & Dashboard -->
         <section id="tab-overview" class="space-y-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div class="card-bright border-l-8 border-l-rose-500">
                     <p class="text-xs font-black text-slate-400">Target Wilayah 3T (2025-2029)</p>
                     <h3 class="text-2xl font-black text-rose-600 mt-1">30 Kabupaten</h3>
-                    <p class="text-xs font-bold text-slate-500 mt-1">Nias, NTT, Maluku, Papua[cite: 29]</p>
+                    <p class="text-xs font-bold text-slate-500 mt-1">Nias, NTT, Maluku, Papua</p>
                 </div>
                 <div class="card-bright border-l-8 border-l-amber-500">
                     <p class="text-xs font-black text-slate-400">Status Kunci Akses Game</p>
                     <h3 id="lock-status-text" class="text-2xl font-black text-rose-600 mt-1">🔒 Terkunci</h3>
-                    <p class="text-xs font-bold text-slate-500 mt-1">Wajib Psikotes Dahulu[cite: 1]</p>
+                    <p class="text-xs font-bold text-slate-500 mt-1">Wajib Psikotes Dahulu</p>
                 </div>
                 <div class="card-bright border-l-8 border-l-blue-500">
                     <p class="text-xs font-black text-slate-400">Pendamping Suluh Aktif</p>
                     <h3 class="text-2xl font-black text-blue-600 mt-1">Fazila & Tim</h3>
-                    <p class="text-xs font-bold text-slate-500 mt-1">Multi-Login Pendamping[cite: 1]</p>
+                    <p class="text-xs font-bold text-slate-500 mt-1">Multi-Login Pendamping</p>
                 </div>
                 <div class="card-bright border-l-8 border-l-emerald-500">
                     <p class="text-xs font-black text-slate-400">Masa Penugasan Suluh Muda</p>
                     <h3 class="text-2xl font-black text-emerald-600 mt-1">6 Bulan</h3>
-                    <p class="text-xs font-bold text-slate-500 mt-1">+ Monitoring Pasca (+1M & +3M)[cite: 1]</p>
+                    <p class="text-xs font-bold text-slate-500 mt-1">+ Monitoring Pasca (+1M & +3M)</p>
                 </div>
             </div>
         </section>
@@ -213,42 +207,72 @@
             <div class="card-bright bg-blue-50 border-blue-300">
                 <div class="flex justify-between items-center flex-wrap gap-3 mb-4">
                     <div>
-                        <h2 class="text-lg font-black text-slate-800">📍 Peta Sebaran Daerah Tertinggal 2025–2029</h2>
-                        <p class="text-xs font-bold text-slate-600 mt-1">Mencakup 30 Kabupaten Sasaran Utama (Sumut, NTB, NTT, Maluku, Papua Barat Daya, Papua Pegunungan, Papua Selatan)[cite: 29]</p>
+                        <h2 class="text-lg font-black text-slate-800">📍 Peta Sebaran Sekolah 3T & Daftar Siswa (2025–2029)</h2>
+                        <p class="text-xs font-bold text-slate-600 mt-1">Daftar Wilayah Kabupaten Terindikasi 3T beserta Data Siswa dan NISN Resmi</p>
                     </div>
                     <button onclick="alert('Form Pengajuan Sekolah / Murid Baru Dikirim ke Pendamping Suluh (Fazila)')" class="bg-amber-400 hover:bg-amber-500 text-slate-900 font-black text-xs px-4 py-2.5 rounded-xl shadow-md">
                         ➕ Pengajuan Sekolah/Murid Baru
                     </button>
                 </div>
 
+                <!-- Input Filter Search -->
+                <div class="mb-4">
+                    <input type="text" id="search-student" onkeyup="filterStudents()" placeholder="🔍 Cari Nama Murid, NISN, Sekolah, atau Kabupaten..." class="w-full bg-white border-2 border-slate-300 rounded-xl px-4 py-2.5 text-xs font-bold text-slate-800">
+                </div>
+
+                <!-- Tabel Data Sekolah & Murid Fiktif -->
                 <div class="overflow-x-auto bg-white rounded-2xl border-2 border-slate-200">
-                    <table class="w-full text-left text-xs font-bold text-slate-700">
+                    <table class="w-full text-left text-xs font-bold text-slate-700" id="student-table">
                         <thead class="bg-slate-100 text-slate-900 font-black border-b-2 border-slate-200">
                             <tr>
-                                <th class="p-3">Kabupaten / Wilayah 3T[cite: 29]</th>
+                                <th class="p-3">Kabupaten 3T</th>
                                 <th class="p-3">Nama Sekolah</th>
-                                <th class="p-3">Jumlah Murid Terdata</th>
-                                <th class="p-3">Status Pendampingan</th>
+                                <th class="p-3">Nama Murid</th>
+                                <th class="p-3">NISN</th>
+                                <th class="p-3">Kelas</th>
+                                <th class="p-3">Status Psikotes</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-100">
                             <tr>
-                                <td class="p-3 text-blue-700 font-black">Kab. Sanggau (Kalbar)[cite: 1]</td>
+                                <td class="p-3 text-blue-700 font-black">Kab. Sanggau (Kalbar)</td>
                                 <td class="p-3">SDN 04 Sekayam</td>
-                                <td class="p-3">142 Murid (6 Kelas)</td>
-                                <td class="p-3"><span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-lg">Aktif (Tim Suluh 01)</span></td>
+                                <td class="p-3 font-extrabold text-slate-900">Budi Pratama</td>
+                                <td class="p-3 font-mono text-slate-600">0123456789</td>
+                                <td class="p-3">Kelas 4 SD</td>
+                                <td class="p-3"><span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-lg">Lulus (Terbuka)</span></td>
                             </tr>
                             <tr>
-                                <td class="p-3 text-blue-700 font-black">Kab. Nias Barat (Sumut)[cite: 29]</td>
+                                <td class="p-3 text-blue-700 font-black">Kab. Sanggau (Kalbar)</td>
+                                <td class="p-3">SDN 04 Sekayam</td>
+                                <td class="p-3 font-extrabold text-slate-900">Siti Aminah</td>
+                                <td class="p-3 font-mono text-slate-600">0123456790</td>
+                                <td class="p-3">Kelas 5 SD</td>
+                                <td class="p-3"><span class="bg-amber-100 text-amber-800 px-2.5 py-1 rounded-lg">Belum Tes</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 text-blue-700 font-black">Kab. Nias Barat (Sumut)</td>
                                 <td class="p-3">SDN 1 Lahomi</td>
-                                <td class="p-3">98 Murid (6 Kelas)</td>
-                                <td class="p-3"><span class="bg-amber-100 text-amber-800 px-2.5 py-1 rounded-lg">Proses Matching</span></td>
+                                <td class="p-3 font-extrabold text-slate-900">Nofita Gulo</td>
+                                <td class="p-3 font-mono text-slate-600">0234567891</td>
+                                <td class="p-3">Kelas 6 SD</td>
+                                <td class="p-3"><span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-lg">Lulus (Terbuka)</span></td>
                             </tr>
                             <tr>
-                                <td class="p-3 text-blue-700 font-black">Kab. Yahukimo (Papua Pegunungan)[cite: 29]</td>
+                                <td class="p-3 text-blue-700 font-black">Kab. Yahukimo (Papua)</td>
                                 <td class="p-3">SD Inpres Dekai</td>
-                                <td class="p-3">210 Murid (6 Kelas)</td>
-                                <td class="p-3"><span class="bg-blue-100 text-blue-800 px-2.5 py-1 rounded-lg">SULUH Box Ready</span></td>
+                                <td class="p-3 font-extrabold text-slate-900">Yohanes Kobak</td>
+                                <td class="p-3 font-mono text-slate-600">0345678912</td>
+                                <td class="p-3">Kelas 2 SMP</td>
+                                <td class="p-3"><span class="bg-amber-100 text-amber-800 px-2.5 py-1 rounded-lg">Belum Tes</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 text-blue-700 font-black">Kab. Sumba Barat (NTT)</td>
+                                <td class="p-3">SMA Negeri 1 Waikabubak</td>
+                                <td class="p-3 font-extrabold text-slate-900">Maria Leda</td>
+                                <td class="p-3 font-mono text-slate-600">0456789123</td>
+                                <td class="p-3">Kelas 12 SMA (MIPA)</td>
+                                <td class="p-3"><span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-lg">Lulus (Terbuka)</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -256,55 +280,63 @@
             </div>
         </section>
 
-        <!-- Tab 3: Psikotes Wajib Belajar -->
+        <!-- Tab 3: Psikotes Wajib Belajar (Disesuaikan Usia/Tingkatan) -->
         <section id="tab-psychtest" class="space-y-6 hidden">
             <div class="card-bright bg-amber-50 border-amber-300">
                 <div class="flex items-center space-x-3 mb-2">
                     <i class="fa-solid fa-brain text-amber-600 text-2xl"></i>
                     <div>
                         <h2 class="text-lg font-black text-slate-800">🧠 Psikotes Diagnostik Kesiapan Belajar (Wajib)</h2>
-                        <p class="text-xs font-bold text-slate-600">Siswa harus menyelesaikan tes ini terlebih dahulu agar materi TK, SD, SMP, dan SMA per Jurusan terbuka![cite: 1]</p>
+                        <p class="text-xs font-bold text-slate-600">Pilih usia / tingkatan sekolah terlebih dahulu untuk memunculkan soal yang sesuai!</p>
                     </div>
                 </div>
             </div>
 
-            <div class="card-bright max-w-2xl mx-auto border-4 border-amber-400">
-                <div class="flex justify-between items-center mb-4">
-                    <span class="text-xs font-black bg-amber-100 text-amber-900 px-3 py-1 rounded-full">Tes Potensi Visual & Emosional</span>
-                    <button onclick="readAloud('Mana gambar buah yang berwarna merah?')" class="bg-blue-600 text-white font-black text-xs px-3 py-1.5 rounded-xl flex items-center">
-                        🔊 Dengarkan Suara Soal
-                    </button>
+            <!-- Dropdown Pilihan Usia / Tingkatan Sekolah -->
+            <div class="card-bright max-w-2xl mx-auto border-4 border-amber-400 space-y-4">
+                <div>
+                    <label class="block text-xs font-black text-slate-700 mb-1">Pilih Usia / Tingkatan Sekolah Siswa:</label>
+                    <select id="psy-age-select" onchange="loadPsychTestByAge()" class="w-full bg-slate-50 border-2 border-slate-300 rounded-xl px-4 py-3 text-sm font-bold text-slate-800 focus:border-blue-500">
+                        <option value="">-- Pilih Usia / Tingkatan --</option>
+                        <option value="tk">TK / PAUD (Usia 4 - 6 Tahun)</option>
+                        <option value="sd">SD (Usia 7 - 12 Tahun)</option>
+                        <option value="smp">SMP (Usia 13 - 15 Tahun)</option>
+                        <option value="sma">SMA (Usia 16 - 18 Tahun)</option>
+                    </select>
                 </div>
 
-                <div class="text-center py-4">
-                    <h3 class="text-xl font-black text-slate-800 mb-6">1. Mana gambar buah yang berwarna MERAH?</h3>
-                    <div class="grid grid-cols-2 gap-4">
-                        <button onclick="completePsychTest(true)" class="p-4 bg-slate-50 border-4 border-slate-200 rounded-2xl hover:border-emerald-500 text-2xl font-black">
-                            🍎 APEL
+                <!-- Konten Soal Psikotes (Sembunyi Sebelum Usia Dipilih) -->
+                <div id="psy-question-container" class="hidden border-t-2 border-slate-200 pt-4">
+                    <div class="flex justify-between items-center mb-4">
+                        <span id="psy-age-label" class="text-xs font-black bg-amber-100 text-amber-900 px-3 py-1 rounded-full">Tes Kesiapan</span>
+                        <button onclick="readAloud(document.getElementById('psy-question-text').innerText)" class="bg-blue-600 text-white font-black text-xs px-3 py-1.5 rounded-xl flex items-center">
+                            🔊 Dengarkan Suara Soal
                         </button>
-                        <button onclick="completePsychTest(false)" class="p-4 bg-slate-50 border-4 border-slate-200 rounded-2xl hover:border-emerald-500 text-2xl font-black">
-                            🍌 PISANG
-                        </button>
+                    </div>
+
+                    <div class="text-center py-4">
+                        <h3 id="psy-question-text" class="text-xl font-black text-slate-800 mb-6">---</h3>
+                        <div id="psy-options-grid" class="grid grid-cols-2 gap-4">
+                            <!-- Pilihan Jawaban Adaptif -->
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Tab 4: Materi & Game Belajar Terpisah (TK, SD, SMP, SMA Per Jurusan) -->
+        <!-- Tab 4: Materi & Game Belajar Terpisah (TK, SD, SMP, SMA Per Jurusan + Mapel Lengkap) -->
         <section id="tab-game" class="space-y-6 hidden">
-            <!-- Peringatan Kunci Akses -->
             <div id="game-lock-warning" class="card-bright bg-rose-50 border-rose-300 text-center py-8">
                 <i class="fa-solid fa-lock text-rose-500 text-4xl mb-3"></i>
                 <h3 class="text-lg font-black text-slate-800">Materi Belajar Masih Terkunci!</h3>
-                <p class="text-xs font-bold text-slate-600 mt-1">Silakan selesaikan "Psikotes Wajib Belajar" di tab sebelah terlebih dahulu.[cite: 1]</p>
+                <p class="text-xs font-bold text-slate-600 mt-1">Silakan selesaikan "Psikotes Wajib Belajar" di tab sebelah terlebih dahulu.</p>
             </div>
 
-            <!-- Konten Utama Materi Belajar (Terbuka Setelah Psikotes) -->
             <div id="game-content-area" class="space-y-6 hidden">
                 <div class="card-bright bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white flex justify-between items-center border-none">
                     <div>
                         <h2 class="text-xl font-black">🎮 Modul Materi Belajar & Game Bertingkat</h2>
-                        <p class="text-xs text-blue-100">Pilih Jenjang Sekolah & Jurusan di Bawah Ini:</p>
+                        <p class="text-xs text-blue-100">Pilih Jenjang Sekolah, Jurusan, dan Mata Pelajaran:</p>
                     </div>
                     <div class="bg-white/20 backdrop-blur px-4 py-2 rounded-2xl text-center border border-white/30">
                         <p class="text-[10px] text-blue-100 font-bold">TOTAL EXP</p>
@@ -314,38 +346,43 @@
 
                 <!-- Navigasi Pilihan Jenjang Sekolah -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                    <button onclick="loadGameLevel('tk')" id="lvl-btn-tk" class="p-3.5 bg-white border-3 border-pink-400 rounded-2xl font-black text-xs text-pink-600 hover:bg-pink-50">
-                        👶 TK / PAUD (Visual & Warna)
+                    <button onclick="loadGameLevel('tk')" class="p-3.5 bg-white border-3 border-pink-400 rounded-2xl font-black text-xs text-pink-600 hover:bg-pink-50">
+                        👶 TK / PAUD
                     </button>
-                    <button onclick="loadGameLevel('sd')" id="lvl-btn-sd" class="p-3.5 bg-white border-3 border-blue-400 rounded-2xl font-black text-xs text-blue-600 hover:bg-blue-50">
-                        🎒 SD (Calistung & Numerasi)
+                    <button onclick="loadGameLevel('sd')" class="p-3.5 bg-white border-3 border-blue-400 rounded-2xl font-black text-xs text-blue-600 hover:bg-blue-50">
+                        🎒 SD (Sekolah Dasar)
                     </button>
-                    <button onclick="loadGameLevel('smp')" id="lvl-btn-smp" class="p-3.5 bg-white border-3 border-emerald-400 rounded-2xl font-black text-xs text-emerald-600 hover:bg-emerald-50">
-                        🏫 SMP (Logika & Sains)
+                    <button onclick="loadGameLevel('smp')" class="p-3.5 bg-white border-3 border-emerald-400 rounded-2xl font-black text-xs text-emerald-600 hover:bg-emerald-50">
+                        🏫 SMP (Sekolah Menengah)
                     </button>
-                    <button onclick="loadGameLevel('sma')" id="lvl-btn-sma" class="p-3.5 bg-white border-3 border-purple-500 rounded-2xl font-black text-xs text-purple-700 hover:bg-purple-50">
-                        🎓 SMA (Pilih Jurusan)
+                    <button onclick="loadGameLevel('sma')" class="p-3.5 bg-white border-3 border-purple-500 rounded-2xl font-black text-xs text-purple-700 hover:bg-purple-50">
+                        🎓 SMA (Per Jurusan)
                     </button>
                 </div>
 
-                <!-- Sub-Navigasi Khusus SMA Per Jurusan (Sembunyi secara default) -->
+                <!-- Sub-Navigasi Khusus SMA Per Jurusan -->
                 <div id="sma-jurusan-bar" class="hidden p-3 bg-purple-100 border-2 border-purple-300 rounded-2xl flex justify-center space-x-3">
-                    <button onclick="loadSmaJurusan('ipa')" class="px-4 py-2 bg-purple-600 text-white font-black text-xs rounded-xl shadow-md hover:bg-purple-700">
-                        📐 Jurusan IPA (MIPA)
+                    <button onclick="loadSmaJurusan('mipa')" class="px-4 py-2 bg-purple-600 text-white font-black text-xs rounded-xl shadow-md hover:bg-purple-700">
+                        📐 Jurusan MIPA
                     </button>
                     <button onclick="loadSmaJurusan('ips')" class="px-4 py-2 bg-amber-500 text-white font-black text-xs rounded-xl shadow-md hover:bg-amber-600">
-                        📖 Jurusan IPS (Sosio)
+                        📖 Jurusan IPS
                     </button>
                     <button onclick="loadSmaJurusan('bahasa')" class="px-4 py-2 bg-emerald-600 text-white font-black text-xs rounded-xl shadow-md hover:bg-emerald-700">
                         📚 Jurusan Bahasa
                     </button>
                 </div>
 
+                <!-- Navigasi Mata Pelajaran (Matematika, B. Indonesia, B. Inggris) -->
+                <div id="subject-selector" class="flex space-x-2 overflow-x-auto bg-slate-100 p-2 rounded-xl border border-slate-200">
+                    <!-- Ditampilkan Dinamis -->
+                </div>
+
                 <!-- Arena Kuis & Pembahasan -->
                 <div class="card-bright max-w-2xl mx-auto border-3 border-blue-300">
                     <div class="flex justify-between items-center mb-4">
                         <span id="game-level-title" class="text-xs font-black text-blue-700 bg-blue-100 px-3 py-1 rounded-full">
-                            Tingkat SD: Calistung & Numerasi Dasar
+                            Tingkat SD: Matematika
                         </span>
                         <button onclick="readAloud(document.getElementById('question-text').innerText)" class="bg-blue-600 text-white font-black text-xs px-3 py-1 rounded-xl">
                             🔊 Bacakan Soal
@@ -353,10 +390,9 @@
                     </div>
 
                     <div class="text-center py-4">
-                        <h3 id="question-text" class="text-lg font-black text-slate-800 mb-6">Berapakah hasil penjumlahan 8 + 7?</h3>
+                        <h3 id="question-text" class="text-lg font-black text-slate-800 mb-6">Soal 1: Berapakah hasil dari 18 + 27?</h3>
                         <div id="options-container" class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                            <button onclick="checkAnswerWithExplanation(true, '8 + 7 = 15. Cara mudah: 8 + 2 = 10, tambahkan sisa 5 jadi 15.')" class="option-btn">A. 15</button>
-                            <button onclick="checkAnswerWithExplanation(false, 'Kurang tepat. Hasil 8 + 7 adalah 15.')" class="option-btn">B. 13</button>
+                            <!-- Pilihan Soal Dinamis -->
                         </div>
                     </div>
 
@@ -371,38 +407,53 @@
             </div>
         </section>
 
-        <!-- Tab 5: Video Pembelajaran Offline (BIG Course) -->
+        <!-- Tab 5: Latihan Soal & Modul TKA -->
+        <section id="tab-tka" class="space-y-6 hidden">
+            <div class="card-bright bg-amber-50 border-amber-300">
+                <h2 class="text-lg font-black text-slate-800">🎓 Modul & Simulasi TKA (Tes Kemampuan Akademik / SNBT)</h2>
+                <p class="text-xs font-bold text-slate-600 mt-1">Persiapan Lanjut Usia SMA untuk Beasiswa Perguruan Tinggi dengan Modul Cepat!</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="card-bright border-l-8 border-l-blue-500">
+                    <h4 class="font-black text-sm text-slate-800">Modul 1: Penalaran Matematika</h4>
+                    <p class="text-xs font-bold text-slate-500 mt-1">Konsep Aljabar, Peluang, & Statistik</p>
+                    <button onclick="alert('Membuka Modul Ringkasan Penalaran Matematika')" class="mt-3 w-full bg-blue-600 text-white font-black text-xs py-2 rounded-xl">📖 Buka Modul Penjelasan</button>
+                </div>
+                <div class="card-bright border-l-8 border-l-purple-500">
+                    <h4 class="font-black text-sm text-slate-800">Modul 2: Literasi B. Indonesia & B. Inggris</h4>
+                    <p class="text-xs font-bold text-slate-500 mt-1">Analisis Paragraf & Reading Comprehension</p>
+                    <button onclick="alert('Membuka Modul Ringkasan Literasi Bahasa')" class="mt-3 w-full bg-purple-600 text-white font-black text-xs py-2 rounded-xl">📖 Buka Modul Penjelasan</button>
+                </div>
+                <div class="card-bright border-l-8 border-l-emerald-500">
+                    <h4 class="font-black text-sm text-slate-800">Modul 3: Penalaran Umum (TPA)</h4>
+                    <p class="text-xs font-bold text-slate-500 mt-1">Logika Silogisme & Pola Deret</p>
+                    <button onclick="alert('Membuka Modul Ringkasan Penalaran Umum')" class="mt-3 w-full bg-emerald-600 text-white font-black text-xs py-2 rounded-xl">📖 Buka Modul Penjelasan</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 6: Video Pembelajaran Offline -->
         <section id="tab-video" class="space-y-6 hidden">
             <div class="card-bright bg-purple-50 border-purple-300">
                 <div class="flex justify-between items-center flex-wrap gap-3">
                     <div>
-                        <h2 class="text-lg font-black text-slate-800">📺 Video Pembelajaran SULUH (Terintegrasi BIG Course)</h2>
-                        <p class="text-xs font-bold text-slate-600 mt-1">Dapat diunduh dan diakses offline tanpa kuota internet melalui server SULUH Box![cite: 1, 5, 8]</p>
+                        <h2 class="text-lg font-black text-slate-800">📺 Video Pembelajaran SULUH Offline</h2>
+                        <p class="text-xs font-bold text-slate-600 mt-1">Dapat diunduh dan diputar langsung tanpa internet via SULUH Box!</p>
                     </div>
-                    <span class="bg-purple-200 text-purple-900 font-black text-xs px-3 py-1.5 rounded-xl">Channel: youtube.com/BIGCourse[cite: 1]</span>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="card-bright">
-                    <div class="aspect-video bg-slate-900 rounded-xl flex items-center justify-center text-white mb-3">
-                        <i class="fa-solid fa-play-circle text-4xl text-purple-400"></i>
+                    <div class="aspect-video bg-slate-900 rounded-xl flex items-center justify-center text-white mb-3 relative overflow-hidden">
+                        <i class="fa-solid fa-play-circle text-5xl text-purple-400"></i>
                     </div>
-                    <h4 class="font-black text-sm text-slate-800">Matematika SD: Konsep Pecahan Mudah</h4>
-                    <p class="text-xs font-bold text-slate-500 mt-1">Durasi: 12 Menit • Offline Cached[cite: 1]</p>
-                    <button onclick="alert('Video telah disimpan di memori offline SULUH Box!')" class="mt-3 w-full bg-emerald-500 text-white font-black text-xs py-2 rounded-xl">
-                        ⬇️ Simpan Offline ke SULUH Box
-                    </button>
-                </div>
-                <div class="card-bright">
-                    <div class="aspect-video bg-slate-900 rounded-xl flex items-center justify-center text-white mb-3">
-                        <i class="fa-solid fa-play-circle text-4xl text-purple-400"></i>
-                    </div>
-                    <h4 class="font-black text-sm text-slate-800">Fisika SMA (IPA): Hukum Newton & Gerak</h4>
-                    <p class="text-xs font-bold text-slate-500 mt-1">Durasi: 18 Menit • Offline Cached[cite: 1]</p>
-                    <button onclick="alert('Video telah disimpan di memori offline SULUH Box!')" class="mt-3 w-full bg-emerald-500 text-white font-black text-xs py-2 rounded-xl">
-                        ⬇️ Simpan Offline ke SULUH Box
-                    </button>
+                    <h4 class="font-black text-sm text-slate-800">Matematika & Fisika Dasar Cepat</h4>
+                    <p class="text-xs font-bold text-slate-500 mt-1">Tonton Langsung Pembahasan Materi Lengkap</p>
+                    <a href="https://www.youtube.com/BIGCourse" target="_blank" class="block text-center mt-3 w-full bg-rose-600 hover:bg-rose-700 text-white font-black text-xs py-2.5 rounded-xl shadow-md">
+                        ▶️ Putar Video Pembelajaran
+                    </a>
                 </div>
             </div>
         </section>
@@ -411,12 +462,14 @@
 
     <!-- Footer -->
     <footer class="bg-white border-t-2 border-slate-200 py-4 text-center text-xs text-slate-600 font-bold">
-        <p><strong>SULUH</strong> • Disupervisi oleh <strong>Pendamping Suluh (Fazila & Tim)</strong> • Bekerja sama dengan <strong>Kemendikdasmen RI</strong>[cite: 1]</p>
+        <p><strong>SULUH</strong> • Disupervisi oleh <strong>Pendamping Suluh (Fazila & Tim)</strong> • Bekerja sama dengan <strong>Kemendikdasmen RI</strong></p>
     </footer>
 
     <!-- JavaScript Logika Web -->
     <script>
         let isPsychTestPassed = false;
+        let currentGrade = 'sd';
+        let currentSubject = 'mtk';
 
         function handleLogin(e) {
             e.preventDefault();
@@ -439,7 +492,7 @@
         }
 
         function switchTab(tabId) {
-            const tabs = ['overview', 'schools', 'psychtest', 'game', 'video'];
+            const tabs = ['overview', 'schools', 'psychtest', 'game', 'tka', 'video'];
             tabs.forEach(t => {
                 document.getElementById(`tab-${t}`).classList.add('hidden');
                 document.getElementById(`btn-${t}`).classList.remove('active-tab');
@@ -453,8 +506,51 @@
                 const utterance = new SpeechSynthesisUtterance(text);
                 utterance.lang = 'id-ID';
                 window.speechSynthesis.speak(utterance);
-            } else {
-                alert("Fitur suara tidak didukung di browser ini.");
+            }
+        }
+
+        function loadPsychTestByAge() {
+            const age = document.getElementById('psy-age-select').value;
+            const container = document.getElementById('psy-question-container');
+            const label = document.getElementById('psy-age-label');
+            const question = document.getElementById('psy-question-text');
+            const grid = document.getElementById('psy-options-grid');
+
+            if (!age) {
+                container.classList.add('hidden');
+                return;
+            }
+
+            container.classList.remove('hidden');
+
+            if (age === 'tk') {
+                label.innerText = "Kesiapan Belajar TK/PAUD";
+                question.innerText = "Mana gambar buah yang berwarna MERAH?";
+                grid.innerHTML = `
+                    <button onclick="completePsychTest(true)" class="p-4 bg-slate-50 border-4 border-slate-200 rounded-2xl hover:border-emerald-500 text-2xl font-black">🍎 APEL</button>
+                    <button onclick="completePsychTest(false)" class="p-4 bg-slate-50 border-4 border-slate-200 rounded-2xl hover:border-emerald-500 text-2xl font-black">🍌 PISANG</button>
+                `;
+            } else if (age === 'sd') {
+                label.innerText = "Kesiapan Belajar SD";
+                question.innerText = "Lanjutkan pola gambar berikut: 🔴 🔵 🔴 🔵 [ ? ]";
+                grid.innerHTML = `
+                    <button onclick="completePsychTest(true)" class="p-4 bg-slate-50 border-4 border-slate-200 rounded-2xl hover:border-emerald-500 text-2xl font-black">🔴 MERAH</button>
+                    <button onclick="completePsychTest(false)" class="p-4 bg-slate-50 border-4 border-slate-200 rounded-2xl hover:border-emerald-500 text-2xl font-black">🔵 BIRU</button>
+                `;
+            } else if (age === 'smp') {
+                label.innerText = "Kesiapan Belajar SMP";
+                question.innerText = "Manakah angka berikutnya dari deret: 2, 4, 6, 8, [ ? ]";
+                grid.innerHTML = `
+                    <button onclick="completePsychTest(true)" class="p-4 bg-slate-50 border-4 border-slate-200 rounded-2xl hover:border-emerald-500 text-2xl font-black">10</button>
+                    <button onclick="completePsychTest(false)" class="p-4 bg-slate-50 border-4 border-slate-200 rounded-2xl hover:border-emerald-500 text-2xl font-black">12</button>
+                `;
+            } else if (age === 'sma') {
+                label.innerText = "Kesiapan Belajar SMA";
+                question.innerText = "Manakah sinonim dari kata 'EFEKTIF'?";
+                grid.innerHTML = `
+                    <button onclick="completePsychTest(true)" class="p-4 bg-slate-50 border-4 border-slate-200 rounded-2xl hover:border-emerald-500 text-lg font-black">Tepat Guna</button>
+                    <button onclick="completePsychTest(false)" class="p-4 bg-slate-50 border-4 border-slate-200 rounded-2xl hover:border-emerald-500 text-lg font-black">Hemat Biaya</button>
+                `;
             }
         }
 
@@ -464,8 +560,9 @@
             document.getElementById('lock-status-text').className = "text-2xl font-black text-emerald-600 mt-1";
             document.getElementById('game-lock-warning').classList.add('hidden');
             document.getElementById('game-content-area').classList.remove('hidden');
-            alert("🎉 Selamat! Anda telah menyelesaikan Psikotes Wajib Belajar. Seluruh Materi Belajar TK, SD, SMP, dan SMA per Jurusan KINI TELAH TERBUKA!");
+            alert("🎉 Selamat! Anda telah menyelesaikan Psikotes Wajib Belajar. Seluruh Materi Belajar TK, SD, SMP, SMA, dan TKA KINI TELAH TERBUKA!");
             switchTab('game');
+            loadGameLevel('sd');
         }
 
         function checkAnswerWithExplanation(isCorrect, explanationText) {
@@ -475,68 +572,103 @@
             text.innerText = explanationText;
         }
 
+        function filterStudents() {
+            const input = document.getElementById('search-student').value.toLowerCase();
+            const rows = document.querySelectorAll('#student-table tbody tr');
+            rows.forEach(row => {
+                const text = row.innerText.toLowerCase();
+                row.style.display = text.includes(input) ? '' : 'none';
+            });
+        }
+
         function loadGameLevel(lvl) {
-            const title = document.getElementById('game-level-title');
-            const question = document.getElementById('question-text');
-            const container = document.getElementById('options-container');
+            currentGrade = lvl;
             const smaBar = document.getElementById('sma-jurusan-bar');
+            const subjectBar = document.getElementById('subject-selector');
             document.getElementById('explanation-box').classList.add('hidden');
 
             smaBar.classList.add('hidden');
 
-            if(lvl === 'tk') {
-                title.innerText = "Tingkat TK / PAUD: Mengenal Benda & Warna";
-                question.innerText = "Pilihlah hewan yang bersuara 'MEOONG'?";
-                container.innerHTML = `
-                    <button onclick="checkAnswerWithExplanation(true, 'Benar! Kucing bersuara Meoong.')" class="option-btn">🐱 KUCING</button>
-                    <button onclick="checkAnswerWithExplanation(false, 'Kurang tepat. Anjing bersuara Guk-guk.')" class="option-btn">🐶 ANJING</button>
+            if (lvl === 'tk') {
+                subjectBar.innerHTML = `
+                    <button onclick="switchSubject('indo')" class="px-3 py-1.5 bg-pink-500 text-white font-black text-xs rounded-lg">B. Indonesia (Huruf)</button>
+                    <button onclick="switchSubject('mtk')" class="px-3 py-1.5 bg-white font-bold text-xs rounded-lg">Matematika (Angka)</button>
+                    <button onclick="switchSubject('ingg')" class="px-3 py-1.5 bg-white font-bold text-xs rounded-lg">B. Inggris (Colors)</button>
                 `;
-            } else if(lvl === 'sd') {
-                title.innerText = "Tingkat SD: Calistung & Numerasi Dasar";
-                question.innerText = "Berapakah hasil penjumlahan 8 + 7?";
-                container.innerHTML = `
-                    <button onclick="checkAnswerWithExplanation(true, '8 + 7 = 15. Cara mudah: 8 + 2 = 10, tambahkan sisa 5 jadi 15.')" class="option-btn">A. 15</button>
-                    <button onclick="checkAnswerWithExplanation(false, 'Kurang tepat. Hasil 8 + 7 adalah 15.')" class="option-btn">B. 13</button>
+            } else if (lvl === 'sd' || lvl === 'smp') {
+                subjectBar.innerHTML = `
+                    <button onclick="switchSubject('mtk')" class="px-3 py-1.5 bg-blue-600 text-white font-black text-xs rounded-lg">Matematika</button>
+                    <button onclick="switchSubject('indo')" class="px-3 py-1.5 bg-white font-bold text-xs rounded-lg">B. Indonesia</button>
+                    <button onclick="switchSubject('ingg')" class="px-3 py-1.5 bg-white font-bold text-xs rounded-lg">B. Inggris</button>
                 `;
-            } else if(lvl === 'smp') {
-                title.innerText = "Tingkat SMP: Logika & Aljabar Dasar";
-                question.innerText = "Jika 2x = 10, berapakah nilai x?";
-                container.innerHTML = `
-                    <button onclick="checkAnswerWithExplanation(true, '2x = 10 -> x = 10 / 2 = 5. Nilai x adalah 5.')" class="option-btn">A. x = 5</button>
-                    <button onclick="checkAnswerWithExplanation(false, 'Kurang tepat. Bagi kedua ruas dengan 2 untuk mendapat x = 5.')" class="option-btn">B. x = 10</button>
-                `;
-            } else if(lvl === 'sma') {
+            } else if (lvl === 'sma') {
                 smaBar.classList.remove('hidden');
-                loadSmaJurusan('ipa');
+                loadSmaJurusan('mipa');
+                return;
             }
+            switchSubject('mtk');
         }
 
         function loadSmaJurusan(jurusan) {
+            const subjectBar = document.getElementById('subject-selector');
+            if (jurusan === 'mipa') {
+                subjectBar.innerHTML = `
+                    <button onclick="switchSubject('mtk')" class="px-3 py-1.5 bg-purple-600 text-white font-black text-xs rounded-lg">Matematika Lanjutan</button>
+                    <button onclick="switchSubject('indo')" class="px-3 py-1.5 bg-white font-bold text-xs rounded-lg">B. Indonesia</button>
+                    <button onclick="switchSubject('ingg')" class="px-3 py-1.5 bg-white font-bold text-xs rounded-lg">B. Inggris</button>
+                    <button onclick="switchSubject('fisika')" class="px-3 py-1.5 bg-white font-bold text-xs rounded-lg">Fisika</button>
+                `;
+            } else if (jurusan === 'ips') {
+                subjectBar.innerHTML = `
+                    <button onclick="switchSubject('mtk')" class="px-3 py-1.5 bg-amber-600 text-white font-black text-xs rounded-lg">Matematika Ekonomi</button>
+                    <button onclick="switchSubject('indo')" class="px-3 py-1.5 bg-white font-bold text-xs rounded-lg">B. Indonesia</button>
+                    <button onclick="switchSubject('ingg')" class="px-3 py-1.5 bg-white font-bold text-xs rounded-lg">B. Inggris</button>
+                    <button onclick="switchSubject('ekonomi')" class="px-3 py-1.5 bg-white font-bold text-xs rounded-lg">Ekonomi</button>
+                `;
+            } else if (jurusan === 'bahasa') {
+                subjectBar.innerHTML = `
+                    <button onclick="switchSubject('indo')" class="px-3 py-1.5 bg-emerald-600 text-white font-black text-xs rounded-lg">Sastra Indonesia</button>
+                    <button onclick="switchSubject('ingg')" class="px-3 py-1.5 bg-white font-bold text-xs rounded-lg">B. Inggris Lanjutan</button>
+                    <button onclick="switchSubject('mtk')" class="px-3 py-1.5 bg-white font-bold text-xs rounded-lg">Matematika</button>
+                `;
+            }
+            switchSubject('mtk');
+        }
+
+        function switchSubject(subj) {
+            currentSubject = subj;
             const title = document.getElementById('game-level-title');
             const question = document.getElementById('question-text');
             const container = document.getElementById('options-container');
             document.getElementById('explanation-box').classList.add('hidden');
 
-            if(jurusan === 'ipa') {
-                title.innerText = "Tingkat SMA - Jurusan MIPA (Fisika)";
-                question.innerText = "Rumus dasar Hukum II Newton untuk gaya (F) adalah?";
+            if (subj === 'mtk') {
+                title.innerText = "Mata Pelajaran: Matematika";
+                question.innerText = "Soal 1: Berapakah hasil dari 18 + 27?";
                 container.innerHTML = `
-                    <button onclick="checkAnswerWithExplanation(true, 'F = m x a (Gaya sama dengan massa dikali percepatan).')" class="option-btn">A. F = m x a</button>
-                    <button onclick="checkAnswerWithExplanation(false, 'Salah. E = mc2 adalah rumus energi Einstein.')" class="option-btn">B. E = m x c²</button>
+                    <button onclick="checkAnswerWithExplanation(true, '18 + 27 = 45. Cara cepat: 18 + 20 = 38, tambahkan 7 jadi 45.')" class="option-btn">A. 45</button>
+                    <button onclick="checkAnswerWithExplanation(false, 'Kurang tepat. Hasil 18 + 27 adalah 45.')" class="option-btn">B. 43</button>
                 `;
-            } else if(jurusan === 'ips') {
-                title.innerText = "Tingkat SMA - Jurusan IPS (Ekonomi)";
-                question.innerText = "Hukum permintaan menyatakan jika harga naik, maka permintaan akan?";
+            } else if (subj === 'indo') {
+                title.innerText = "Mata Pelajaran: Bahasa Indonesia";
+                question.innerText = "Soal 1: Manakah yang merupakan kata baku?";
                 container.innerHTML = `
-                    <button onclick="checkAnswerWithExplanation(true, 'Hukum permintaan: Harga naik -> Permintaan Turun (berbanding terbalik).')" class="option-btn">A. Turun</button>
-                    <button onclick="checkAnswerWithExplanation(false, 'Salah. Jika harga naik, konsumen cenderung mengurangi pembelian (turun).')" class="option-btn">B. Naik</button>
+                    <button onclick="checkAnswerWithExplanation(true, 'Apotek adalah bentuk kata baku menurut KBBI, sedangkan apotik adalah bentuk tidak baku.')" class="option-btn">A. Apotek</button>
+                    <button onclick="checkAnswerWithExplanation(false, 'Salah. Bentuk yang baku adalah Apotek.')" class="option-btn">B. Apotik</button>
                 `;
-            } else if(jurusan === 'bahasa') {
-                title.innerText = "Tingkat SMA - Jurusan Bahasa (Sastra)";
-                question.innerText = "Pengulangan bunyi konsonan yang sama pada puisi disebut?";
+            } else if (subj === 'ingg') {
+                title.innerText = "Mata Pelajaran: Bahasa Inggris";
+                question.innerText = "Soal 1: What is the English word for 'Kucing'?";
                 container.innerHTML = `
-                    <button onclick="checkAnswerWithExplanation(true, 'Aliterasi adalah gaya bahasa berupa pengulangan bunyi konsonan pada kata yang berurutan.')" class="option-btn">A. Aliterasi</button>
-                    <button onclick="checkAnswerWithExplanation(false, 'Asonansi adalah pengulangan bunyi vokal, bukan konsonan.')" class="option-btn">B. Asonansi</button>
+                    <button onclick="checkAnswerWithExplanation(true, 'Cat berarti Kucing dalam Bahasa Inggris.')" class="option-btn">A. Cat</button>
+                    <button onclick="checkAnswerWithExplanation(false, 'Dog berarti Anjing.')" class="option-btn">B. Dog</button>
+                `;
+            } else {
+                title.innerText = "Mata Pelajaran Spesialis";
+                question.innerText = "Soal 1: Rumus dasar Hukum II Newton?";
+                container.innerHTML = `
+                    <button onclick="checkAnswerWithExplanation(true, 'F = m x a.')" class="option-btn">A. F = m x a</button>
+                    <button onclick="checkAnswerWithExplanation(false, 'Salah.')" class="option-btn">B. E = mc²</button>
                 `;
             }
         }
